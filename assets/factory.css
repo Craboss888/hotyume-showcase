@@ -1,0 +1,437 @@
+.factory-entry {
+  border-bottom: 1px solid var(--line);
+}
+
+.factory-entry-head {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(42px, 8vw, 140px);
+  align-items: end;
+  margin-bottom: clamp(64px, 8vw, 120px);
+}
+
+.factory-entry-head .section-number {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.factory-entry-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(60px, 6vw, 104px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+.factory-entry-head h2 em {
+  color: var(--hot-coral);
+  font-style: normal;
+  text-shadow: 0 0 28px rgba(255, 107, 114, 0.2);
+}
+
+.factory-entry-head p {
+  max-width: 620px;
+  margin: 0 0 0.35em;
+  color: var(--muted);
+  font-size: clamp(19px, 1.8vw, 28px);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.factory-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.factory-entry-grid a {
+  position: relative;
+  min-height: 390px;
+  padding: clamp(30px, 3.3vw, 54px);
+  overflow: hidden;
+  color: var(--paper);
+  border-right: 1px solid var(--line);
+  text-decoration: none;
+  transition: background 320ms var(--ease-out), transform 320ms var(--ease-out);
+}
+
+.factory-entry-grid a:last-child {
+  border-right: 0;
+}
+
+.factory-entry-grid a::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -120px;
+  width: 240px;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: border-color 320ms var(--ease-out), transform 500ms var(--ease-out);
+}
+
+.factory-entry-grid a:hover,
+.factory-entry-grid a:focus-visible {
+  z-index: 1;
+  background: rgba(255, 107, 114, 0.055);
+  transform: translateY(-8px);
+}
+
+.factory-entry-grid a:hover::before,
+.factory-entry-grid a:focus-visible::before {
+  border-color: var(--hot-coral);
+  transform: scale(1.2);
+}
+
+.factory-entry-grid span,
+.factory-entry-grid b {
+  font-family: var(--font-utility);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.factory-entry-grid span {
+  color: var(--hot-coral);
+}
+
+.factory-entry-grid h3 {
+  margin: 88px 0 22px;
+  font-family: var(--font-display);
+  font-size: clamp(34px, 3.1vw, 53px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.factory-entry-grid p {
+  max-width: 340px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.factory-entry-grid b {
+  position: absolute;
+  right: clamp(30px, 3.3vw, 54px);
+  bottom: 36px;
+  left: clamp(30px, 3.3vw, 54px);
+  display: flex;
+  justify-content: space-between;
+  color: var(--paper);
+  font-weight: 500;
+}
+
+.factory-entry-grid b i {
+  color: var(--dream-cyan);
+  font-size: 16px;
+  font-style: normal;
+}
+
+.factory-page {
+  height: 100svh;
+  overflow: hidden;
+}
+
+.factory-site-header {
+  position: fixed;
+  background: rgba(7, 7, 10, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.factory-header-title,
+.factory-back,
+.factory-console-head span,
+.factory-console-head p {
+  font-family: var(--font-utility);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.factory-header-title {
+  grid-column: 2;
+  justify-self: center;
+  color: var(--muted-2);
+}
+
+.factory-back {
+  grid-column: 3;
+  justify-self: end;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.factory-back span {
+  margin-left: 8px;
+  color: var(--hot-coral);
+}
+
+.factory-shell {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  height: 100svh;
+  padding-top: 82px;
+}
+
+.factory-console-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  min-height: 104px;
+  padding: 24px 36px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.factory-console-head div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.factory-console-head span,
+.factory-console-head p {
+  color: var(--muted-2);
+}
+
+.factory-console-head strong {
+  font-family: var(--font-display);
+  font-size: 31px;
+  letter-spacing: -0.035em;
+}
+
+.factory-console-head p {
+  margin: 0 0 5px;
+}
+
+.factory-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 98px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.factory-tabs button {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 18px;
+  row-gap: 5px;
+  align-items: center;
+  padding: 0 32px;
+  color: rgba(245, 244, 247, 0.78);
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: rgba(16, 16, 22, 0.45);
+  cursor: pointer;
+  text-align: left;
+  transition: color 220ms var(--ease-out), background 220ms var(--ease-out);
+}
+
+.factory-tabs button:last-child {
+  border-right: 0;
+}
+
+.factory-tabs button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--pulse-pink), var(--hot-coral));
+  transition: transform 300ms var(--ease-out);
+}
+
+.factory-tabs button:hover,
+.factory-tabs button.is-active {
+  color: var(--paper);
+  background: rgba(255, 255, 255, 0.028);
+}
+
+.factory-tabs button.is-active::after {
+  transform: scaleX(1);
+}
+
+.factory-tabs button > span {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  font-family: var(--font-utility);
+  font-size: 10px;
+}
+
+.factory-tabs button.is-active > span {
+  color: var(--void);
+  border-color: var(--hot-coral);
+  background: var(--hot-coral);
+}
+
+.factory-tabs strong,
+.factory-tabs small {
+  grid-column: 2;
+  font-family: var(--font-utility);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.factory-tabs small {
+  display: block;
+  color: rgba(245, 244, 247, 0.72);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.factory-scroll {
+  position: relative;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: var(--hot-coral) var(--surface);
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 150ms ease, transform 260ms var(--ease-out);
+}
+
+.factory-scroll.is-switching {
+  opacity: 0;
+  transform: translateX(18px);
+}
+
+.factory-panel.section-pad {
+  width: min(1500px, calc(100% - 72px));
+  min-height: 100%;
+  padding-block: clamp(72px, 8vw, 130px);
+}
+
+.factory-panel[hidden] {
+  display: none !important;
+}
+
+.factory-panel.is-active {
+  animation: factory-panel-in 420ms var(--ease-out) both;
+}
+
+@keyframes factory-panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .factory-entry-head {
+    grid-template-columns: 1fr;
+  }
+
+  .factory-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .factory-entry-grid a {
+    min-height: 310px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .factory-entry-grid a:last-child {
+    border-bottom: 0;
+  }
+
+  .factory-entry-grid h3 {
+    margin-top: 60px;
+  }
+
+  .factory-console-head {
+    min-height: 88px;
+  }
+
+  .factory-console-head p {
+    display: none;
+  }
+
+  .factory-tabs button {
+    grid-template-columns: auto 1fr;
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .factory-entry-head h2 {
+    font-size: clamp(55px, 16vw, 76px);
+  }
+
+  .factory-site-header {
+    padding-inline: 16px;
+  }
+
+  .factory-header-title {
+    display: none;
+  }
+
+  .factory-shell {
+    padding-top: 82px;
+  }
+
+  .factory-console-head {
+    min-height: 78px;
+    padding: 14px 16px;
+  }
+
+  .factory-console-head strong {
+    font-size: 23px;
+  }
+
+  .factory-tabs {
+    min-height: 70px;
+  }
+
+  .factory-tabs button {
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+  }
+
+  .factory-tabs button > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .factory-tabs strong {
+    display: none;
+  }
+
+  .factory-panel.section-pad {
+    width: calc(100% - 32px);
+    padding-block: 64px 90px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .factory-entry-grid a,
+  .factory-scroll,
+  .factory-panel.is-active {
+    animation: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HotYume AIGC 内容工厂：内容生产、商品发布与运营交付系统。">
+  <title>HotYume — AIGC 内容工厂全景</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070a'/%3E%3Cpath d='M14 15h10v12h16V15h10v34H40V36H24v13H14z' fill='%23ff6b72'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/base.css?v=20260824j">
+  <link rel="stylesheet" href="assets/production.css?v=20260824a">
+  <link rel="stylesheet" href="assets/mask-flow.css?v=20260823a">
+  <link rel="stylesheet" href="assets/livp-lab.css?v=20260823a">
+  <link rel="stylesheet" href="assets/brand-store.css?v=20260824c">
+  <link rel="stylesheet" href="assets/recommendation-lab.css?v=20260824a">
+  <link rel="stylesheet" href="assets/commercial.css?v=20260824g">
+  <link rel="stylesheet" href="assets/factory.css?v=20260824e">
+  <link rel="stylesheet" href="assets/responsive.css?v=20260824d">
+</head>
+<body class="factory-page">
+  <a class="skip-link" href="#factory-content">跳到工厂内容</a>
+
+  <header class="site-header factory-site-header">
+    <a class="brand hotyume-wordmark hotyume-wordmark--logo" data-hotyume-wordmark href="index.html" aria-label="返回 HotYume 首页">
+      <span class="hotyume-wordmark__hot" aria-hidden="true">HOT</span><span class="hotyume-wordmark__yume" aria-hidden="true">YUME</span>
+    </a>
+    <span class="factory-header-title">AIGC CONTENT FACTORY</span>
+    <a class="factory-back" href="index.html#factory-entry">返回品牌首页 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="factory-shell" id="factory-content">
+    <div class="factory-console-head">
+      <div>
+        <span>SYSTEM OVERVIEW / 2026</span>
+        <strong>一座持续运转的内容工厂</strong>
+      </div>
+      <p>选择一个系统，内容将在同一视窗内切换。</p>
+    </div>
+
+    <div class="factory-tabs" role="tablist" aria-label="内容工厂三大系统" data-factory-tabs>
+      <button type="button" role="tab" id="tab-production" aria-controls="production" aria-selected="true" class="is-active" data-factory-target="production">
+        <span>01</span><strong>Content Production</strong><small>内容生产</small>
+      </button>
+      <button type="button" role="tab" id="tab-publishing" aria-controls="publishing" aria-selected="false" tabindex="-1" data-factory-target="publishing">
+        <span>02</span><strong>Publishing</strong><small>商品发布</small>
+      </button>
+      <button type="button" role="tab" id="tab-operations" aria-controls="operations" aria-selected="false" tabindex="-1" data-factory-target="operations">
+        <span>03</span><strong>Operations</strong><small>运营与售后</small>
+      </button>
+    </div>
+
+    <div class="factory-scroll" data-factory-scroll>
+      <section class="chapter factory-panel section-pad is-active" id="production" role="tabpanel" aria-labelledby="tab-production" aria-hidden="false" data-factory-panel="production">
+        <header class="chapter-head reveal">
+          <div class="section-number">01 / CONTENT PRODUCTION</div>
+          <h2 id="production-title">从素材，到可交付的<span class="title-accent">动态资产</span>。</h2>
+          <p>把每一次创作拆成可追踪、可回退、可复用的生产步骤，让审美判断与自动化能力在同一条流水线上协作。</p>
+        </header>
+
+        <div class="pipeline reveal" aria-label="内容生产八阶段">
+          <div class="pipeline-main">
+            <div><b>01</b><span>抓取</span></div>
+            <div><b>02</b><span>海选</span></div>
+            <div><b>03</b><span>入围</span></div>
+            <div><b>04</b><span>AI 加工</span></div>
+            <div><b>05</b><span>首帧设计</span></div>
+            <div><b>06</b><span>动态化</span></div>
+            <div><b>07</b><span>定稿</span></div>
+          </div>
+          <div class="pipeline-fork">
+            <span>MASTER</span>
+            <div><b>交付支线</b><small>静态壁纸 / 20s 母版 / LIVP</small></div>
+            <div><b>宣传支线</b><small>3:4 / 水印 / 编号 / 合规版本</small></div>
+          </div>
+        </div>
+
+        <article class="showcase showcase-workbench reveal">
+          <div class="showcase-copy">
+            <span class="kicker">THE PRODUCTION OS</span>
+            <h3>一整套生产流程，被收进同一个工作台。</h3>
+            <p>原本散落在文件夹、脚本和平台之间的动作，现在拥有统一阶段、清晰状态和可恢复历史。创作可以快，但每一步仍然可控。</p>
+            <ul class="feature-list">
+              <li><span>01</span>全阶段移动与逐步撤销</li>
+              <li><span>02</span>锁屏构图安全区与细节检查</li>
+              <li><span>03</span>候选对比、非破坏采用与版本恢复</li>
+              <li><span>04</span>生成参数在人确认后才提交</li>
+            </ul>
+          </div>
+          <div class="browser-placeholder asset-slot factory-shot-frame" data-asset-slot="workbench-overview" data-asset-ratio="16:10">
+            <img class="factory-real-shot" src="assets/media/factory/workbench-overview.webp?v=20260823b" alt="HotYume 工作台海选池实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <div class="agent-stack">
+          <article class="agent-row reveal">
+            <div class="agent-index">AGENT / 01</div>
+            <div class="agent-copy">
+              <span class="kicker">DISCOVERY</span>
+              <h3>壁纸抓取 Agent</h3>
+              <p>理解需求、核验 IP、过滤风险内容，再让真正合格的素材进入海选。</p>
+              <div class="logic-tags"><span>3 SOURCES</span><span>IP EVIDENCE</span><span>QUALITY RACE</span><span>SAFE INTAKE</span></div>
+            </div>
+            <div class="agent-visual asset-slot factory-shot-frame" data-asset-slot="crawler-agent-ui" data-asset-ratio="16:10">
+              <img class="factory-real-shot" src="assets/media/factory/crawler-agent.webp?v=20260823b" alt="壁纸抓取 Agent 实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="agent-row reveal">
+            <div class="agent-index">AGENT / 02</div>
+            <div class="agent-copy">
+              <span class="kicker">IMAGE LAB</span>
+              <h3>图像加工与首帧 Agent</h3>
+              <p>局部修改时保护原画结构，动态化前反向设计可抵达的首帧，候选只有主动采用才进入生产。</p>
+              <div class="logic-tags"><span>1–3 VERSIONS</span><span>NON-DESTRUCTIVE</span><span>FIRST / LAST FRAME</span></div>
+            </div>
+            <div class="agent-visual asset-slot factory-shot-frame" data-asset-slot="image-agent-before-after" data-asset-ratio="16:10">
+              <img class="factory-real-shot" src="assets/media/factory/image-agent.webp?v=20260823b" alt="图像加工与首帧 Agent 实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="agent-row reveal">
+            <div class="agent-index">AGENT / 03</div>
+            <div class="agent-copy">
+              <span class="kicker">MOTION DIRECTION</span>
+              <h3>二次元动画师 Agent</h3>
+              <p>先理解姿势、遮挡和可循环元素，再把视觉意图翻译成可执行参数，为每张图给出轻、中、重三档方案。</p>
+              <div class="logic-tags"><span>DIRECTOR</span><span>KLING ADAPTER</span><span>3 MOTION LEVELS</span></div>
+            </div>
+            <div class="agent-visual asset-slot factory-shot-frame" data-asset-slot="motion-agent-ui" data-asset-ratio="16:10">
+              <img class="factory-real-shot" src="assets/media/factory/motion-agent.webp?v=20260823b" alt="二次元动画师 Agent 实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </div>
+
+        <article class="compliance reveal" aria-labelledby="compliance-title">
+          <div class="compliance-copy">
+            <span class="kicker">PLATFORM-SAFE DERIVATIVES</span>
+            <h3 id="compliance-title">让合规处理精准覆盖，而不是破坏画面。</h3>
+            <p>从固定规则，到多模型定位、SAM2 分割、人工标注样本与持续迭代。合规处理成为一套可复查的视觉决策。</p>
+            <div class="evidence-line"><span><b>100</b>人工标注样本</span><span><b>双 Agent</b>持续迭代</span><span><b>50%</b>打码可用率提高</span></div>
+          </div>
+          <div class="mask-flow" role="img" aria-label="自动打码流程：多模型检测、SAM2 分割、打码 Agent、评价 Agent；未达标自动回流迭代，100 张标准答案持续校准系统">
+            <div class="mask-flow__head"><span>AUTOMATED MASKING / DUAL-AGENT LOOP</span><i></i><b>SYSTEM ONLINE</b></div>
+            <div class="mask-flow__pipeline">
+              <div class="mask-flow__node"><em>01 / DETECT</em><strong>多模型检测</strong><small>WD14 · YOLO · NudeNet</small></div>
+              <i class="mask-flow__arrow" aria-hidden="true"></i>
+              <div class="mask-flow__node"><em>02 / SEGMENT</em><strong>SAM2 分割</strong><small>提取像素级精确轮廓</small></div>
+              <i class="mask-flow__arrow" aria-hidden="true"></i>
+              <div class="mask-flow__node is-maker"><em>AGENT / 01</em><strong>打码 Agent</strong><small>生成角度与覆盖方案</small></div>
+              <i class="mask-flow__arrow" aria-hidden="true"></i>
+              <div class="mask-flow__node is-judge"><em>AGENT / 02</em><strong>评价 Agent</strong><small>定向验证像素覆盖率</small></div>
+            </div>
+            <div class="mask-flow__loop" aria-hidden="true"><span>未达标 / RETRY</span><b>↺</b></div>
+            <div class="mask-flow__learning">
+              <div><em>FEW-SHOT LIBRARY</em><strong>100 张标准答案</strong><small>学习角度、覆盖度、不遮脸与不重叠</small></div>
+              <div class="mask-flow__feed" aria-hidden="true"><span>CALIBRATE AGENT</span><i>↗</i></div>
+              <div class="mask-flow__output"><em>PASS</em><strong>输出合规版本</strong><small>通过评价 Agent 后进入商品包装</small></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="reverse reveal">
+          <div class="reverse-copy">
+            <span class="kicker">REVERSE ENGINEERING / LIVP</span>
+            <h3>没有现成 Know-how，<br>就用 48 次实验，<br>跑通一条交付链路。</h3>
+            <p>围绕命名、容器、字节偏移与 UUID 做了 48 次可复验实验，最终让 Live Photo 从电脑打包，经手机云端进入 iOS 相册后仍可被识别与播放。</p>
+          </div>
+          <div class="livp-lab" role="img" aria-label="LIVP 逆向工程实验台：经过 48 次命名实验，逐项破解文件命名、无压缩容器、56 字节动态偏移和 HEIC MOV 共同内容标识，最终通过电脑云端、手机云端与 iOS 相册验证并成功播放 Live Photo">
+            <div class="livp-lab__head"><span>BLACK BOX LAB / FORMAT RECONSTRUCTION</span><i></i><b>48 NAMED EXPERIMENTS</b></div>
+            <div class="livp-lab__tests" aria-hidden="true"><span class="fail">A</span><span class="fail">B</span><span class="fail">C</span><span>G</span><span class="fail">N</span><span class="fail">Y</span><span class="fail">AA</span><span>AV1</span><span class="fail">AW4</span><span class="pass">AX</span><span class="pass">AZ</span><span class="pass">BA</span></div>
+            <div class="livp-lab__core">
+              <div class="livp-lab__pair">
+                <div><em>STATIC ASSET</em><strong>HEIC</strong><small>goLive 原始输出</small></div>
+                <span>＝ UUID ＝</span>
+                <div><em>MOTION ASSET</em><strong>MOV</strong><small>不压缩 · 不转码</small></div>
+              </div>
+              <i class="livp-lab__core-arrow" aria-hidden="true"></i>
+              <div class="livp-lab__container"><em>REBUILT CONTAINER</em><strong>.LIVP</strong><code>02 FILES / OFFSET MAP / ID LINK</code></div>
+            </div>
+            <div class="livp-lab__rules">
+              <div><em>01</em><strong>17-DIGIT NAME</strong><small>[Ll]ive_ + 精确 17 位数字</small></div>
+              <div><em>02</em><strong>ZIP_STORED</strong><small>version 20 · extra empty</small></div>
+              <div><em>03</em><strong>56-BYTE COMMENT</strong><small>文件偏移与大小动态计算</small></div>
+              <div><em>04</em><strong>CONTENT IDENTIFIER</strong><small>HEIC / MOV UUID 必须一致</small></div>
+            </div>
+            <div class="livp-lab__validation"><span>电脑云端</span><i></i><span>手机云端</span><i></i><span>iOS 相册</span><i></i><strong>LIVE</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="chapter factory-panel section-pad chapter-publishing" id="publishing" role="tabpanel" aria-labelledby="tab-publishing" aria-hidden="true" data-factory-panel="publishing" hidden>
+        <header class="chapter-head reveal">
+          <div class="section-number">02 / PUBLISHING</div>
+          <h2 id="publishing-title">成品不是终点。<br>它还要变成被看见的<span class="title-accent">商品</span>。</h2>
+          <p>同一份内容资产被重新组织成平台需要的封面、文案、标签与发布动作。小红书是第一个商业化验证窗口，不是最终边界。</p>
+        </header>
+
+        <article class="store-intro reveal" aria-labelledby="store-intro-title">
+          <div class="store-intro__shot">
+            <div class="store-intro__browser-bar"><i></i><i></i><i></i><span>XIAOHONGSHU / STOREFRONT</span></div>
+            <img src="assets/media/publishing/store.webp" alt="HotYume 小红书店铺主页截图" width="900" height="1483" loading="lazy" decoding="async">
+          </div>
+          <div class="store-intro__copy">
+            <span class="kicker">COMMERCIAL VALIDATION / 01</span>
+            <h3 id="store-intro-title"><span class="hotyume-wordmark hotyume-wordmark--inline store-intro__wordmark" data-hotyume-wordmark role="img" aria-label="HotYume"><span class="hotyume-wordmark__hot" aria-hidden="true">HOT</span><span class="hotyume-wordmark__yume" aria-hidden="true">YUME</span></span> 店铺</h3>
+            <p class="store-intro__lead">以原创动态壁纸切入真实消费场景，快速验证内容偏好、商品表达、自动交付与用户反馈。</p>
+            <div class="store-intro__capabilities" aria-label="店铺能力">
+              <div><span>01</span><strong>原创动态壁纸</strong><small>统一风格、持续上新</small></div>
+              <div><span>02</span><strong>下单自动发货</strong><small>按设备组织交付包</small></div>
+              <div><span>03</span><strong>版权登记</strong><small>品牌化管理内容资产</small></div>
+              <div><span>04</span><strong>私信定制</strong><small>承接个性化内容需求</small></div>
+            </div>
+            <small class="store-intro__notice">*由于平台监管加强，店铺暂时无法访问，正在申诉中</small>
+          </div>
+        </article>
+
+        <article class="brand-system reveal" aria-labelledby="brand-system-title">
+          <div class="brand-system__head">
+            <div><span class="kicker">BRAND SYSTEM / VISUAL LANGUAGE</span><h3 id="brand-system-title">不只是上架内容，<br>而是建立可被记住的品牌。</h3></div>
+            <p>从 Logo、像素字标到贴纸、作品编号牌，统一视觉语言贯穿店铺主页、商品包装与交付素材，让每一次内容触达都在积累品牌识别。</p>
+          </div>
+          <div class="brand-system__assets">
+            <figure class="brand-asset brand-asset--neon"><img src="assets/media/publishing/logo-neon.webp" alt="HotYume 霓虹品牌 Logo" width="1100" height="1100" loading="lazy" decoding="async"><figcaption><span>01 / PRIMARY MARK</span><strong>霓虹主标</strong></figcaption></figure>
+            <figure class="brand-asset brand-asset--black"><img src="assets/media/publishing/logo-black.webp" alt="HotYume 黑色品牌 Logo" width="1100" height="1100" loading="lazy" decoding="async"><figcaption><span>02 / MONO MARK</span><strong>单色标识</strong></figcaption></figure>
+            <figure class="brand-asset brand-asset--sticker"><img src="assets/media/publishing/sticker-oval.webp" alt="HotYume 粉色蝴蝶结品牌贴纸" width="1000" height="571" loading="lazy" decoding="async"><figcaption><span>03 / PACKAGING</span><strong>交付贴纸</strong></figcaption></figure>
+            <figure class="brand-asset brand-asset--watermark"><img src="assets/media/publishing/watermark-white.webp" alt="HotYume 作品编号与水印视觉" width="1500" height="1000" loading="lazy" decoding="async"><figcaption><span>04 / ASSET ID</span><strong>作品编号牌</strong></figcaption></figure>
+          </div>
+        </article>
+
+        <div class="publish-demo reveal" data-publish-demo data-step="product">
+          <figure class="publish-product publish-product--real" data-asset-slot="nami-summer-product" data-asset-ratio="3:5">
+            <span class="asset-index">PRODUCT / NAMI SUMMER</span>
+            <img src="assets/media/publishing/nami-summer-product.webp" alt="娜美夏日动态壁纸原图" width="768" height="1280" loading="lazy" decoding="async">
+            <figcaption><b>娜美 · 夏日版</b><small>LIVE WALLPAPER / SUMMER</small></figcaption>
+          </figure>
+          <div class="publish-arrow"><i></i><span>MCP FLOW</span></div>
+          <div class="publish-console">
+            <div class="console-top"><span><span class="hotyume-wordmark hotyume-wordmark--utility" data-hotyume-wordmark role="img" aria-label="HotYume"><span class="hotyume-wordmark__hot" aria-hidden="true">HOT</span><span class="hotyume-wordmark__yume" aria-hidden="true">YUME</span></span> COPY AGENT</span><b data-publish-status>READY</b></div>
+            <div class="console-body">
+              <div class="console-step is-active" data-publish-panel="product"><span>INPUT / NAMI · SUMMER</span><h3>从娜美夏日动态壁纸开始</h3><p>Agent 读取角色、夏日场景、动态卖点与 iPhone 适配信息，准备生成平台内容。</p></div>
+              <div class="console-step console-step--copy" data-publish-panel="copy" hidden>
+                <span>COPY GENERATED</span>
+                <h3>AI动态壁纸 · 娜美夏日版</h3>
+                <div class="generated-copy-body">
+                  <p>用 AI 给娜美做了一张夏日风格的动态锁屏壁纸🌊</p>
+                  <p>可灵 AI 生成，正放 + 倒放无缝循环，挂在锁屏上会一直动。</p>
+                  <p>海风、发丝和光影都做了轻微循环，画面有呼吸感，但不会晃得眼花。</p>
+                  <p>交付包含动态壁纸和高清静态版，iPhone 设置后长按锁屏即可播放。喜欢娜美和海贼王的朋友可以先收藏，想看其他角色也欢迎留言。</p>
+                </div>
+                <div class="tag-row"><b>#AI动态壁纸</b><b>#娜美</b><b>#海贼王</b><b>#iPhone壁纸</b><b>#实况壁纸</b><b>#锁屏壁纸</b><b>#手机美化</b></div>
+              </div>
+              <div class="console-step" data-publish-panel="publish" hidden><span>MCP PUBLISHING</span><h3>素材与文案已进入发布队列</h3><div class="send-track"><i></i><i></i><i></i><strong></strong></div><p>娜美夏日商品图、正文与标签按小红书格式组装，并通过 MCP 进入发布动作。</p></div>
+              <div class="console-step console-step--result" data-publish-panel="result" data-asset-slot="nami-summer-post-result" data-asset-ratio="720:1432" hidden><span>POST RESULT</span><div class="post-result-frame"><img src="assets/media/publishing/nami-summer-post-result.webp" alt="娜美夏日动态壁纸的小红书发布结果截图" width="720" height="1432" loading="lazy" decoding="async"></div></div>
+            </div>
+            <button type="button" class="publish-action" data-publish-action>生成发布内容</button>
+          </div>
+        </div>
+
+        <div class="channel-map reveal">
+          <div><span>CURRENT WINDOW</span><h3>小红书</h3><p>验证内容偏好、商品表达、交付流程与用户反馈。</p></div><i></i>
+          <div><span>DISCOVERY</span><h3>Instagram · TikTok · Pinterest</h3><p>让动态内容进入更广泛的视觉发现与短视频分发场景。</p></div><i></i>
+          <div><span>OWNED SUPPLY</span><h3>多渠道内容资产</h3><p>渠道可以变化，生产系统与内容供给能力持续沉淀。</p></div>
+        </div>
+      </section>
+
+      <section class="chapter factory-panel section-pad" id="operations" role="tabpanel" aria-labelledby="tab-operations" aria-hidden="true" data-factory-panel="operations" hidden>
+        <header class="chapter-head reveal">
+          <div class="section-number">03 / OPERATIONS</div>
+          <h2 id="operations-title">让一次购买，成为<span class="title-accent">持续关系</span>。</h2>
+          <p>运营 Agent 接住高频咨询、订单交付与后续推荐，让内容规模增长时，服务体验仍然保持一致。</p>
+        </header>
+
+        <div class="ops-grid reveal">
+          <article class="ops-card ops-support">
+            <div class="ops-top"><span>自动回复</span></div>
+            <div class="ops-real-shot-frame">
+              <img class="ops-real-shot" src="assets/media/operations/auto-reply.webp?v=20260824c" alt="HotYume 店铺运营 Agent 自动回复用户常见问题的实机截图，用户头像已匿名处理" width="851" height="1687" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="ops-card ops-delivery">
+            <div class="ops-top"><span>自动发货</span></div>
+            <div class="ops-real-shot-frame">
+              <img class="ops-real-shot" src="assets/media/operations/auto-delivery.webp" alt="HotYume 店铺订单完成后自动发送壁纸交付链接的实机截图" width="851" height="1684" loading="lazy" decoding="async">
+            </div>
+          </article>
+        </div>
+
+        <article class="recommendation reveal">
+          <div>
+            <span class="kicker">NEXT / RECOMMENDATION AGENT</span>
+            <h3>当相似内容再次出现，主动找到最可能喜欢它的人。</h3>
+            <p>未来将结合角色、IP、画风、主色与购买历史，把新发布的壁纸推送给真正相关的用户，而不是做无差别触达。</p>
+          </div>
+          <div class="recommendation-lab" role="img" aria-label="推荐 Agent 概念实验台：使用合成数据从用户历史中提取 IP、画风、主色、动效和购买历史特征，与新品计算 92% 匹配度，并进入定向推荐队列">
+            <div class="recommendation-lab__head"><span>RECOMMENDATION ENGINE / CONCEPT SIMULATION</span><i></i><b>SYNTHETIC DATA</b></div>
+            <div class="recommendation-lab__body">
+              <section class="recommendation-profile" aria-label="合成用户偏好">
+                <div class="recommendation-label"><span>USER / 017</span><b>PROFILE READY</b></div>
+                <div class="recommendation-avatar"><span>U</span><i></i></div>
+                <div class="recommendation-history" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="recommendation-profile__meta"><span>3 ORDERS</span><span>6 SAVES</span><span>2 SERIES</span></div>
+              </section>
+              <section class="recommendation-engine" aria-label="推荐特征分析">
+                <div class="recommendation-label"><span>AGENT / VECTOR PROFILE</span><b>LIVE</b></div>
+                <div class="recommendation-signals">
+                  <div><span>IP</span><i style="--signal:88%"></i><b>0.88</b></div>
+                  <div><span>STYLE</span><i style="--signal:94%"></i><b>0.94</b></div>
+                  <div><span>COLOR</span><i style="--signal:81%"></i><b>0.81</b></div>
+                  <div><span>MOTION</span><i style="--signal:76%"></i><b>0.76</b></div>
+                  <div><span>HISTORY</span><i style="--signal:90%"></i><b>0.90</b></div>
+                </div>
+                <div class="recommendation-vector"><span>ANIME</span><span>NEON</span><span>PINK / CYAN</span><span>SUBTLE LOOP</span></div>
+              </section>
+              <section class="recommendation-match" aria-label="新品匹配结果">
+                <div class="recommendation-label"><span>NEW DROP / 024</span><b>MATCHED</b></div>
+                <div class="recommendation-drop" aria-hidden="true"><i></i><i></i><i></i><span>NEW</span></div>
+                <div class="recommendation-score"><span>MATCH / 92%</span><i><b></b></i></div>
+                <ul><li>同系列内容</li><li>相似视觉风格</li><li>主色高度相关</li></ul>
+              </section>
+            </div>
+            <div class="recommendation-lab__push"><span>RECOMMENDATION QUEUED</span><i></i><strong>TARGETED PUSH</strong><b>→</b><em>USER / 017</em></div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="assets/site.mjs"></script>
+</body>
+</html>
