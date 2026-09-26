@@ -253,6 +253,17 @@ function initFactoryTabs() {
   const panels = [...document.querySelectorAll('[data-factory-panel]')];
   if (!tablist || !scroller || buttons.length !== panels.length) return;
 
+  const shell = document.querySelector('.factory-shell');
+  const overview = document.querySelector('.factory-console-head');
+  const updateOverview = () => {
+    const collapsed = shell.classList.contains('is-scrolled');
+    const next = collapsed ? scroller.scrollTop > 4 : scroller.scrollTop > 60;
+    shell.classList.toggle('is-scrolled', next);
+    overview.inert = next;
+    overview.setAttribute('aria-hidden', String(next));
+  };
+  scroller.addEventListener('scroll', updateOverview, { passive: true });
+
   const chapters = panels.map(panel => panel.dataset.factoryPanel);
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let transitionTimer;
@@ -275,6 +286,7 @@ function initFactoryTabs() {
         button.tabIndex = states[index] ? 0 : -1;
       });
       scroller.scrollTop = 0;
+      updateOverview();
       if (updateHash) history.replaceState(null, '', `#${target}`);
       requestAnimationFrame(() => scroller.classList.remove('is-switching'));
     };

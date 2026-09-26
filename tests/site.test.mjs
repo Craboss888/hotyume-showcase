@@ -332,7 +332,8 @@ test('内容生产章节使用四张真实工作台实机截图', async () => {
     assert.ok(image.byteLength > 20_000, `${asset} 不是有效的实机截图`);
   }
   assert.equal((html.match(/class="factory-real-shot"/g) ?? []).length, 4);
-  assert.equal((html.match(/class="factory-real-shot"[^>]+width="1920" height="1200"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="factory-real-shot"[^>]+width="1920" height="1200"/g) ?? []).length, 3);
+  assert.match(html, /image-agent\.webp[^>]+width="1864" height="883"/);
 });
 
 test('打码模块使用最新的样本规模、双 Agent 迭代与可用率指标', async () => {

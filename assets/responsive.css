@@ -84,12 +84,12 @@
   }
 
   .agent-row {
-    grid-template-columns: 0.25fr 0.75fr;
+    grid-template-columns: 1fr;
   }
 
   .agent-visual {
     grid-column: 1 / -1;
-    width: min(800px, 100%);
+    width: 100%;
     margin-left: auto;
   }
 

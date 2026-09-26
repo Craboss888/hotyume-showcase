@@ -370,8 +370,8 @@
 
 .agent-row {
   display: grid;
-  grid-template-columns: 0.28fr 0.72fr 1fr;
-  gap: clamp(24px, 4vw, 70px);
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+  gap: 24px clamp(24px, 3vw, 48px);
   align-items: center;
   min-height: 540px;
   padding: 70px 0;
@@ -379,6 +379,7 @@
 }
 
 .agent-index {
+  grid-column: 1 / -1;
   align-self: start;
   color: var(--muted-2);
   font-family: var(--font-utility);

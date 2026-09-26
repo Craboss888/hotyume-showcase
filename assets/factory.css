@@ -439,3 +439,20 @@
     transition: none;
   }
 }
+
+/* The overview yields space to the content after scrolling. */
+.factory-console-head {
+  max-height: 180px;
+  overflow: hidden;
+  transition: max-height 260ms ease, min-height 260ms ease, padding 260ms ease, opacity 180ms ease;
+}
+.factory-shell.is-scrolled .factory-console-head {
+  min-height: 0;
+  max-height: 0;
+  padding-block: 0;
+  border-bottom-width: 0;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .factory-console-head { transition: none; }
+}

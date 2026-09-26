@@ -55,7 +55,7 @@ python3 -m http.server 8911 --bind 127.0.0.1
 |---|---|---|
 | `workbench-overview` | 工作台海选池总览 | `assets/media/factory/workbench-overview.webp` |
 | `crawler-agent-ui` | 壁纸抓取 Agent | `assets/media/factory/crawler-agent.webp` |
-| `image-agent-before-after` | 图像加工与首帧 Agent | `assets/media/factory/image-agent.webp` |
+| `image-agent-before-after` | 图像加工 Agent：深色第4轮候选2，原图与胡桃替换对比 | `assets/media/factory/image-agent.webp` |
 | `motion-agent-ui` | 二次元动画师三档方案 | `assets/media/factory/motion-agent.webp` |
 
 以上均来自 `127.0.0.1:8899` 的真实运行界面，原始验收截图保留在项目 `output/playwright/`；网页副本统一为 1920×1200 WebP，并按完整工作区或完整弹窗边界取景。
