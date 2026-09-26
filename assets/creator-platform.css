@@ -1,0 +1,59 @@
+.creator-platform {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+  margin-top: clamp(180px, 17vw, 260px);
+  padding-top: 90px;
+  border-top: 1px solid var(--line-strong);
+}
+.platform-copy h3 {
+  margin: 24px 0 32px;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 3.7vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+.platform-copy h3 em {
+  display: block;
+  color: var(--hot-coral);
+  font-style: normal;
+}
+.platform-copy > p:not(.kicker) {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.85;
+}
+.platform-pricing {
+  display: flex;
+  gap: 44px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.platform-pricing strong { display: block; font-size: 22px; }
+.platform-pricing span { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); }
+.platform-preview { min-width: 0; margin: 0; }
+.platform-preview-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  font-size: 14px;
+}
+.platform-preview-head span:last-child { color: var(--muted); }
+.platform-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--line-strong); border-radius: 8px; }
+.platform-preview ol { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; list-style: none; margin: 24px 0; padding: 0; }
+.platform-preview li { position: relative; font-size: 14px; text-align: center; }
+.platform-preview li:not(:last-child)::after { content: '›'; position: absolute; right: -8px; color: var(--hot-coral); }
+.platform-preview figcaption { color: var(--muted); font-size: 13px; line-height: 1.7; }
+@media (max-width: 1180px) {
+  .creator-platform { grid-template-columns: 1fr; }
+  .platform-preview { width: min(880px, 100%); margin-left: auto; }
+}
+@media (max-width: 760px) {
+  .creator-platform { margin-top: 90px; padding-top: 64px; }
+  .platform-copy h3 { font-size: 36px; }
+  .platform-pricing { gap: 28px; }
+}

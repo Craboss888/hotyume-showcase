@@ -5,6 +5,23 @@ export function toggleWallpaperState(states, activeIndex) {
   });
 }
 
+// Slots reserve the full width of playing screens; idle cards may remain layered behind them.
+export function layoutWallpaperRow(active, width, cardWidth, gap) {
+  const count = active.length;
+  const liveCount = active.filter(Boolean).length;
+  const idleCount = count - liveCount;
+  const available = width - gap * (count - 1);
+  const liveWidth = Math.min(cardWidth, available / count + idleCount * (available / count - cardWidth * 0.4) / Math.max(1, liveCount));
+  const idleWidth = idleCount ? (available - liveCount * liveWidth) / idleCount : 0;
+  let left = 0;
+  return active.map(live => {
+    const slotWidth = live ? liveWidth : idleWidth;
+    const result = { center: left + slotWidth / 2, width: live ? liveWidth : Math.min(cardWidth * 0.84, slotWidth + cardWidth * 0.35) };
+    left += slotWidth + gap;
+    return result;
+  });
+}
+
 export function wallpaperMediaCommand(state) {
   return state === 'live'
     ? { play: true, reset: false }
@@ -57,8 +74,27 @@ const publishLabels = {
 
 function initWallpapers() {
   const cards = [...document.querySelectorAll('[data-wallpaper-card]')];
+  const deck = document.querySelector('.phone-deck');
+  if (!deck || !cards.length) return;
+  const layoutCards = () => {
+    const expanded = cards.some(card => card.dataset.requestedState === 'live');
+    deck.dataset.expanded = String(expanded);
+    if (!expanded) return;
+    const columns = matchMedia('(max-width: 760px)').matches ? 3 : 6;
+    const width = deck.clientWidth;
+    for (let start = 0; start < cards.length; start += columns) {
+      const row = cards.slice(start, start + columns);
+      const layout = layoutWallpaperRow(row.map(card => card.dataset.requestedState === 'live'), width, row[0].offsetWidth, columns === 3 ? 8 : 12);
+      row.forEach((card, index) => {
+        card.style.setProperty('--spread-x', `${layout[index].center - width * (index + 0.5) / columns}px`);
+        card.style.setProperty('--spread-scale', String(layout[index].width / card.offsetWidth));
+      });
+    }
+  };
+  new ResizeObserver(layoutCards).observe(deck);
   const retryTimers = new WeakMap();
   const startupTimers = new WeakMap();
+  const playbackAttempts = new WeakMap();
 
   const render = (card, visualState) => {
     const requestedLive = card.dataset.requestedState === 'live';
@@ -67,6 +103,7 @@ function initWallpapers() {
     card.classList.toggle('is-loading', visualState === 'loading');
     card.classList.toggle('is-waiting', visualState === 'waiting');
     card.setAttribute('aria-pressed', String(requestedLive));
+    layoutCards();
     card.querySelector('.phone-state').textContent = {
       live: 'LIVE',
       loading: 'LOADING',
@@ -86,6 +123,7 @@ function initWallpapers() {
   };
 
   const stopPlayback = card => {
+    playbackAttempts.delete(card);
     const video = card.querySelector('[data-wallpaper-video]');
     card.dataset.requestedState = 'still';
     card.dataset.playRetries = '0';
@@ -120,8 +158,13 @@ function initWallpapers() {
         failPlayback(card);
       }
     }, WALLPAPER_PLAYBACK_TIMEOUT_MS));
+    const attempt = {};
+    playbackAttempts.set(card, attempt);
     const playRequest = video.play();
-    if (playRequest?.catch) playRequest.catch(() => failPlayback(card));
+    if (playRequest?.catch) playRequest.catch(() => {
+      // A cancelled earlier play must not cancel a newer user request.
+      if (playbackAttempts.get(card) === attempt) failPlayback(card);
+    });
   };
 
   const retryPlayback = card => {
@@ -171,6 +214,7 @@ function initWallpapers() {
         render(card, resolveWallpaperPlayback('live', 'playing', true));
       });
       video.addEventListener('pause', () => {
+        if (!video.paused) return;
         clearStartup(card);
         const next = resolveWallpaperPlayback(
           card.dataset.requestedState,

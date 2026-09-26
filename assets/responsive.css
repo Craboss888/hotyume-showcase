@@ -49,9 +49,6 @@
     padding: 60px 0 0;
   }
 
-  .phone-deck {
-    min-height: 540px;
-  }
 
   .thesis-grid,
   .chapter-head,
@@ -121,19 +118,6 @@
 
   .pipeline-main div {
     border-bottom: 1px solid var(--line);
-  }
-
-  .pipeline-fork {
-    grid-template-columns: 1fr;
-  }
-
-  .pipeline-fork > span {
-    min-height: 55px;
-  }
-
-  .pipeline-fork div {
-    border-top: 1px solid var(--line);
-    border-left: 0;
   }
 
   .publish-demo {
@@ -229,11 +213,6 @@
 
   .wallpaper-stage {
     padding-top: 35px;
-  }
-
-  .stage-hint {
-    margin-left: 0;
-    transform: translateY(8px);
   }
 
   .phone-deck {
@@ -368,16 +347,26 @@
     font-size: clamp(42px, 12vw, 58px);
   }
 
-  .pipeline-main {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .pipeline-main { grid-template-columns: 1fr; }
 
   .pipeline-main div {
-    min-height: 90px;
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-height: 84px;
+    padding: 18px 12px;
+    border-right: 0;
   }
 
-  .pipeline-main span {
-    margin-top: 18px;
+  .pipeline-main span, .pipeline-main small { margin: 0; }
+
+  .pipeline-main div:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: -4px;
+    left: 24px;
+    transform: rotate(135deg);
   }
 
   .showcase {

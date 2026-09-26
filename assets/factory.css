@@ -95,6 +95,10 @@
 }
 
 .factory-entry-grid span {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--hot-coral);
 }
 
@@ -119,7 +123,7 @@
   bottom: 36px;
   left: clamp(30px, 3.3vw, 54px);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: var(--paper);
   font-weight: 500;
 }

@@ -7,14 +7,15 @@
   <title>HotYume — AIGC 内容工厂全景</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307070a'/%3E%3Cpath d='M14 15h10v12h16V15h10v34H40V36H24v13H14z' fill='%23ff6b72'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/base.css?v=20260824j">
-  <link rel="stylesheet" href="assets/production.css?v=20260824a">
+  <link rel="stylesheet" href="assets/creation-efficiency.css?v=20260926f">
+  <link rel="stylesheet" href="assets/production.css?v=20260926c">
   <link rel="stylesheet" href="assets/mask-flow.css?v=20260823a">
   <link rel="stylesheet" href="assets/livp-lab.css?v=20260823a">
-  <link rel="stylesheet" href="assets/brand-store.css?v=20260824c">
+  <link rel="stylesheet" href="assets/brand-store.css?v=20260926e">
   <link rel="stylesheet" href="assets/recommendation-lab.css?v=20260824a">
-  <link rel="stylesheet" href="assets/commercial.css?v=20260824g">
+  <link rel="stylesheet" href="assets/commercial.css?v=20260926e">
   <link rel="stylesheet" href="assets/factory.css?v=20260824e">
-  <link rel="stylesheet" href="assets/responsive.css?v=20260824d">
+  <link rel="stylesheet" href="assets/responsive.css?v=20260926c">
 </head>
 <body class="factory-page">
   <a class="skip-link" href="#factory-content">跳到工厂内容</a>
@@ -52,24 +53,19 @@
       <section class="chapter factory-panel section-pad is-active" id="production" role="tabpanel" aria-labelledby="tab-production" aria-hidden="false" data-factory-panel="production">
         <header class="chapter-head reveal">
           <div class="section-number">01 / CONTENT PRODUCTION</div>
-          <h2 id="production-title">从素材，到可交付的<span class="title-accent">动态资产</span>。</h2>
-          <p>把每一次创作拆成可追踪、可回退、可复用的生产步骤，让审美判断与自动化能力在同一条流水线上协作。</p>
+          <h2 id="production-title">拆分复杂的<br><span class="title-accent">创作流程</span>。</h2>
+          <p>把每一次创作拆成<span class="title-accent">可追踪、可回退、可复用</span>的生产步骤，并且每个步骤配备专门的 <span class="title-accent">AI Agent</span>，实现创作提效。</p>
         </header>
 
-        <div class="pipeline reveal" aria-label="内容生产八阶段">
+        <div class="pipeline reveal" aria-label="内容生产七阶段及对应 Agent 与工具">
           <div class="pipeline-main">
-            <div><b>01</b><span>抓取</span></div>
-            <div><b>02</b><span>海选</span></div>
-            <div><b>03</b><span>入围</span></div>
-            <div><b>04</b><span>AI 加工</span></div>
-            <div><b>05</b><span>首帧设计</span></div>
-            <div><b>06</b><span>动态化</span></div>
-            <div><b>07</b><span>定稿</span></div>
-          </div>
-          <div class="pipeline-fork">
-            <span>MASTER</span>
-            <div><b>交付支线</b><small>静态壁纸 / 20s 母版 / LIVP</small></div>
-            <div><b>宣传支线</b><small>3:4 / 水印 / 编号 / 合规版本</small></div>
+            <div><b>01</b><span>壁纸海选</span><small>抓取 Agent</small></div>
+            <div><b>02</b><span>AI 加工</span><small>生图 Agent</small></div>
+            <div><b>03</b><span>动态化</span><small>动画师 Agent<br>可灵 MCP</small></div>
+            <div><b>04</b><span>定稿</span><small class="pipeline-tool">构图定稿工具</small></div>
+            <div><b>05</b><span>商品化打包</span><small class="pipeline-tool">自动打包工具</small></div>
+            <div><b>06</b><span>生成渠道素材</span><small>打码 Agent</small></div>
+            <div><b>07</b><span>准备发布</span><small>文案 Agent</small></div>
           </div>
         </div>
 
@@ -87,6 +83,32 @@
           </div>
           <div class="browser-placeholder asset-slot factory-shot-frame" data-asset-slot="workbench-overview" data-asset-ratio="16:10">
             <img class="factory-real-shot" src="assets/media/factory/workbench-overview.webp?v=20260823b" alt="HotYume 工作台海选池实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <article class="creation-efficiency reveal" aria-labelledby="efficiency-title">
+          <header class="creation-efficiency__head">
+            <span class="kicker">创作提效</span>
+            <h3 id="efficiency-title">更短的制作时间，<br><em>更低的生成成本。</em></h3>
+            <p>把分散的制作步骤整合进创作平台，在持续迭代中，缩短单张动态壁纸产品的制作时间，降低生成成本。</p>
+          </header>
+          <div class="efficiency-comparisons">
+            <section class="efficiency-comparison" aria-labelledby="efficiency-time-title">
+              <h4 id="efficiency-time-title">单张制作时间</h4>
+              <div class="efficiency-comparison__values">
+                <div class="efficiency-before"><p>传统手工制作</p><div><strong>6+</strong><span>小时</span></div><small>最快完成</small></div>
+                <span class="efficiency-arrow" aria-hidden="true">→</span>
+                <div class="efficiency-after"><p>使用创作平台</p><div><strong>5</strong><span>min 内</span></div><small>最快完成</small></div>
+              </div>
+            </section>
+            <section class="efficiency-comparison" aria-labelledby="efficiency-cost-title">
+              <h4 id="efficiency-cost-title">单张生成成本</h4>
+              <div class="efficiency-comparison__values">
+                <div class="efficiency-before"><p>早期生成与测试</p><div><strong>20–30</strong><span>元</span></div></div>
+                <span class="efficiency-arrow" aria-hidden="true">→</span>
+                <div class="efficiency-after"><p>持续迭代优化后</p><div><strong>5</strong><span>元内</span></div></div>
+              </div>
+            </section>
           </div>
         </article>
 
@@ -108,12 +130,16 @@
             <div class="agent-index">AGENT / 02</div>
             <div class="agent-copy">
               <span class="kicker">IMAGE LAB</span>
-              <h3>图像加工与首帧 Agent</h3>
-              <p>局部修改时保护原画结构，动态化前反向设计可抵达的首帧，候选只有主动采用才进入生产。</p>
-              <div class="logic-tags"><span>1–3 VERSIONS</span><span>NON-DESTRUCTIVE</span><span>FIRST / LAST FRAME</span></div>
+              <h3>图像加工 Agent</h3>
+              <ul class="image-agent-scenarios">
+                <li>画质增强</li>
+                <li>无损扩图</li>
+                <li>替换人物</li>
+                <li>去水印</li>
+              </ul>
             </div>
             <div class="agent-visual asset-slot factory-shot-frame" data-asset-slot="image-agent-before-after" data-asset-ratio="16:10">
-              <img class="factory-real-shot" src="assets/media/factory/image-agent.webp?v=20260823b" alt="图像加工与首帧 Agent 实机界面" width="1920" height="1200" loading="lazy" decoding="async">
+              <img class="factory-real-shot" src="assets/media/factory/image-agent.webp?v=20260823b" alt="图像加工 Agent 实机界面" width="1920" height="1200" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -161,11 +187,11 @@
         <article class="reverse reveal">
           <div class="reverse-copy">
             <span class="kicker">REVERSE ENGINEERING / LIVP</span>
-            <h3>没有现成 Know-how，<br>就用 48 次实验，<br>跑通一条交付链路。</h3>
-            <p>围绕命名、容器、字节偏移与 UUID 做了 48 次可复验实验，最终让 Live Photo 从电脑打包，经手机云端进入 iOS 相册后仍可被识别与播放。</p>
+            <h3>没有现成 Know-how，<br>就用 80+ 轮实验，<br>跑通一条交付链路。</h3>
+            <p>围绕命名、容器、字节偏移与 UUID 做了 80+ 轮可复验实验，最终让 Live Photo 从电脑打包，经手机云端进入 iOS 相册后仍可被识别与播放。</p>
           </div>
-          <div class="livp-lab" role="img" aria-label="LIVP 逆向工程实验台：经过 48 次命名实验，逐项破解文件命名、无压缩容器、56 字节动态偏移和 HEIC MOV 共同内容标识，最终通过电脑云端、手机云端与 iOS 相册验证并成功播放 Live Photo">
-            <div class="livp-lab__head"><span>BLACK BOX LAB / FORMAT RECONSTRUCTION</span><i></i><b>48 NAMED EXPERIMENTS</b></div>
+          <div class="livp-lab" role="img" aria-label="LIVP 逆向工程实验台：经过 80+ 轮实验，逐项破解文件命名、无压缩容器、56 字节动态偏移和 HEIC MOV 共同内容标识，最终通过电脑云端、手机云端与 iOS 相册验证并成功播放 Live Photo">
+            <div class="livp-lab__head"><span>BLACK BOX LAB / FORMAT RECONSTRUCTION</span><i></i><b>80+ EXPERIMENT ROUNDS</b></div>
             <div class="livp-lab__tests" aria-hidden="true"><span class="fail">A</span><span class="fail">B</span><span class="fail">C</span><span>G</span><span class="fail">N</span><span class="fail">Y</span><span class="fail">AA</span><span>AV1</span><span class="fail">AW4</span><span class="pass">AX</span><span class="pass">AZ</span><span class="pass">BA</span></div>
             <div class="livp-lab__core">
               <div class="livp-lab__pair">
@@ -202,13 +228,13 @@
           <div class="store-intro__copy">
             <span class="kicker">COMMERCIAL VALIDATION / 01</span>
             <h3 id="store-intro-title"><span class="hotyume-wordmark hotyume-wordmark--inline store-intro__wordmark" data-hotyume-wordmark role="img" aria-label="HotYume"><span class="hotyume-wordmark__hot" aria-hidden="true">HOT</span><span class="hotyume-wordmark__yume" aria-hidden="true">YUME</span></span> 店铺</h3>
-            <p class="store-intro__lead">以原创动态壁纸切入真实消费场景，快速验证内容偏好、商品表达、自动交付与用户反馈。</p>
-            <div class="store-intro__capabilities" aria-label="店铺能力">
-              <div><span>01</span><strong>原创动态壁纸</strong><small>统一风格、持续上新</small></div>
-              <div><span>02</span><strong>下单自动发货</strong><small>按设备组织交付包</small></div>
-              <div><span>03</span><strong>版权登记</strong><small>品牌化管理内容资产</small></div>
-              <div><span>04</span><strong>私信定制</strong><small>承接个性化内容需求</small></div>
-            </div>
+            <p class="store-intro__lead">从动态壁纸创作到真实订单，在小红书验证内容偏好、商品表达与自动交付。</p>
+            <dl class="store-metrics" aria-label="小红书店铺销售数据">
+              <div><dt>上线时间</dt><dd><time datetime="2026-06" aria-label="2026 年 6 月">2026.06</time></dd></div>
+              <div><dt>累计发布壁纸产品</dt><dd><strong>30+</strong><span>款</span></dd></div>
+              <div><dt>累计售出</dt><dd><strong>600+</strong><span>单</span></dd></div>
+              <div><dt>单图最高售出</dt><dd><strong>100+</strong><span>单</span></dd></div>
+            </dl>
             <small class="store-intro__notice">*由于平台监管加强，店铺暂时无法访问，正在申诉中</small>
           </div>
         </article>
@@ -226,7 +252,8 @@
           </div>
         </article>
 
-        <div class="publish-demo reveal" data-publish-demo data-step="product">
+        <h3 class="publishing-subtitle publishing-subtitle--agent reveal" id="publish-agent-title">发布 Agent</h3>
+        <div aria-labelledby="publish-agent-title" class="publish-demo reveal" data-publish-demo data-step="product">
           <figure class="publish-product publish-product--real" data-asset-slot="nami-summer-product" data-asset-ratio="3:5">
             <span class="asset-index">PRODUCT / NAMI SUMMER</span>
             <img src="assets/media/publishing/nami-summer-product.webp" alt="娜美夏日动态壁纸原图" width="768" height="1280" loading="lazy" decoding="async">
@@ -255,7 +282,8 @@
           </div>
         </div>
 
-        <div class="channel-map reveal">
+        <h3 class="publishing-subtitle publishing-subtitle--channels reveal" id="channel-map-title">发布层：探索更多渠道</h3>
+        <div class="channel-map reveal" aria-labelledby="channel-map-title">
           <div><span>CURRENT WINDOW</span><h3>小红书</h3><p>验证内容偏好、商品表达、交付流程与用户反馈。</p></div><i></i>
           <div><span>DISCOVERY</span><h3>Instagram · TikTok · Pinterest</h3><p>让动态内容进入更广泛的视觉发现与短视频分发场景。</p></div><i></i>
           <div><span>OWNED SUPPLY</span><h3>多渠道内容资产</h3><p>渠道可以变化，生产系统与内容供给能力持续沉淀。</p></div>

@@ -359,7 +359,6 @@ a {
   color: var(--muted);
   font-size: 12px;
   letter-spacing: 0.04em;
-  transform: translateY(36px);
 }
 
 .stage-hint span {
@@ -449,11 +448,38 @@ a {
 }
 
 .phone-card:hover,
-.phone-card:focus-visible,
-.phone-card.is-live {
+.phone-card:focus-visible {
   z-index: 8;
   filter: brightness(1);
   transform: translate(var(--phone-x), calc(var(--phone-y) - 18px)) rotate(0) scale(1.05);
+}
+
+.phone-deck[data-expanded="true"] .phone-card {
+  z-index: var(--phone-z, 1);
+  transform: translate(var(--spread-x), var(--phone-y)) rotate(var(--phone-rotate)) scale(var(--spread-scale));
+}
+
+.phone-deck[data-expanded="true"] .phone-card[aria-pressed="true"] {
+  z-index: 10;
+  filter: brightness(1);
+  transform: translate(var(--spread-x), var(--phone-y)) rotate(0deg) scale(var(--spread-scale));
+}
+
+.stage-caption {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.thesis h2 em {
+  display: block;
+  white-space: nowrap;
+}
+
+.stage-caption em, .thesis h2 em {
+  color: var(--hot-coral);
+  font-style: normal;
 }
 
 .phone-shell {
@@ -687,7 +713,7 @@ a {
 
 .system-loop {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin-bottom: 0;
   margin-top: 76px;

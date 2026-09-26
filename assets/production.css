@@ -118,7 +118,7 @@
 
 .pipeline-main div {
   position: relative;
-  min-height: 112px;
+  min-height: 190px;
   padding: 22px 16px;
   border-right: 1px solid var(--line);
 }
@@ -153,38 +153,25 @@
   font-weight: 600;
 }
 
-.pipeline-fork {
-  display: grid;
-  grid-template-columns: 0.4fr 1fr 1fr;
-  border-top: 1px solid var(--line);
-}
-
-.pipeline-fork > span {
-  display: grid;
-  place-items: center;
-  color: var(--dream-cyan);
-  font-family: var(--font-utility);
-  font-size: 9px;
-  letter-spacing: 0.14em;
-}
-
-.pipeline-fork div {
-  padding: 22px 28px;
-  border-left: 1px solid var(--line);
-}
-
-.pipeline-fork b,
-.pipeline-fork small {
+.pipeline-main small {
   display: block;
+  margin-top: 18px;
+  color: var(--dream-cyan);
+  font-size: 13px;
+  line-height: 1.8;
 }
 
-.pipeline-fork b {
-  margin-bottom: 4px;
+.pipeline-main .pipeline-tool { color: var(--muted); }
+
+.image-agent-scenarios {
+  padding-left: 1.2em;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.9;
 }
 
-.pipeline-fork small {
-  color: var(--muted-2);
-}
+.image-agent-scenarios li::marker { color: var(--hot-coral); }
 
 .showcase {
   margin-top: clamp(100px, 12vw, 180px);

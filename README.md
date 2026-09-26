@@ -1,5 +1,7 @@
 # HotYume 展示网页
 
+本文件维护运行方式、文件和素材映射；页面内容与交互的共同规范见[展示网页领域说明](../文档/领域/展示网页.md)，修改前同时读取。
+
 这是一个独立、无第三方运行依赖的双页面作品集网站。首页负责品牌叙事，并在愿景区用纯代码实验图说明 HotYume 正在把内容变量与真实发布反馈连接成判断力闭环；`factory.html` 负责内容生产、商品发布与运营售后三套系统的同屏展示。首屏六组已经全部接入真实静态 / 动态壁纸；内容生产章已接入四张工作台实机截图，商品发布章已接入真实店铺主页、品牌视觉素材及娜美夏日版发布演示，运营章已接入自动回复与自动发货实机截图；尚未提供的其他素材继续使用设计占位槽。
 
 在线展示：<https://craboss888.github.io/hotyume-showcase/>
@@ -21,14 +23,17 @@ python3 -m http.server 8911 --bind 127.0.0.1
 - `index.html`：品牌首页、六台壁纸阵列、工厂入口、护城河与未来愿景。
 - `factory.html`：AIGC 内容工厂子页面；三章在固定控制台视窗内切换。
 - `assets/base.css`：设计 token、全局规则、导航、首屏与项目命题。
+- `assets/creation-efficiency.css`：生产页时间与生成成本的前后对比。
 - `assets/production.css`：章节导航、生产流水线、Agent、合规与 LIVP。
 - `assets/brand-store.css`：店铺介绍与品牌视觉系统。
 - `assets/recommendation-lab.css`：推荐 Agent 的合成数据决策实验台。
+- `assets/creator-platform.css`：首页创作平台商业模式、工作台截图与付费方式说明。
 - `assets/commercial.css`：发布、运营、竞争力、未来愿景与页脚。
 - `assets/factory.css`：首页工厂入口、子页面控制台、章节切换与专属响应式规则。
 - `assets/responsive.css`：动效、桌面/平板/手机布局与 reduced-motion。
 - `assets/site.mjs`：六台壁纸独立切换、工厂章节切换、对比、发布与客服演示。
 - `tests/site.test.mjs`：结构与纯交互逻辑测试。
+- `tests/home-browser-check.js`：供 Playwright 浏览器执行的回归函数；本地 8911 服务运行后，验证三种视口六图同时播放不遮挡、二次播放与浏览器返回原位。
 
 ## 素材替换清单
 

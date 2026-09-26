@@ -35,7 +35,7 @@ async function readStyles() {
 test('首页与工厂子页面各自承担清晰的叙事职责', async () => {
   const home = await readFile(new URL('index.html', root), 'utf8');
   const factory = await readFile(new URL('factory.html', root), 'utf8').catch(() => '');
-  for (const id of ['hero', 'factory', 'factory-entry', 'moat', 'vision']) {
+  for (const id of ['hero', 'factory', 'factory-entry', 'creator-platform', 'vision']) {
     assert.match(home, new RegExp(`id=["']${id}["']`), `首页缺少 #${id}`);
   }
   for (const id of ['production', 'publishing', 'operations']) {
@@ -73,8 +73,8 @@ test('壁纸互动提示居中并靠近手机阵列', async () => {
   assert.match(stageHint, /width:\s*min\(760px,\s*100%\)/);
   assert.match(stageHint, /justify-content:\s*center/);
   assert.match(stageHint, /margin:\s*0 auto 20px/);
-  assert.match(stageHint, /transform:\s*translateY\(36px\)/);
-  assert.match(responsive, /@media \(max-width:760px\)[\s\S]*\.stage-hint\s*\{[^}]*transform:\s*translateY\(8px\)/s);
+  assert.doesNotMatch(stageHint, /transform:/);
+
 });
 
 test('首屏突出 AIGC 内容工厂并删除装饰性数字和状态轨道', async () => {
@@ -115,9 +115,10 @@ test('愿景以纯代码实验图呈现正在形成的内容判断力', async ()
   assert.match(lab, /IN PROGRESS \/ JUDGMENT LOOP/);
   assert.match(lab, /当生成不再稀缺，<em>判断才是壁垒。<\/em>/);
   assert.match(lab, /AIGC 把内容生产从稀缺变成过剩。/);
-  assert.match(lab, /模型的能力终会拉平/);
+  assert.match(lab, /当生产本身不再是门槛，<em>生产什么<\/em>就变得重要。/);
   assert.doesNotMatch(lab, /模型能力人人都能获得/);
-  assert.match(lab, /真正拉开差距的，不是谁生成得更多，而是谁更早知道什么值得做。/);
+  assert.match(lab, /判断力：我们的数据飞轮/);
+  assert.doesNotMatch(lab, /模型共享。判断复利。/);
   assert.match(lab, /IP、构图、人物占比、画风与动效/);
   assert.match(lab, /每一次发布，都让真实反馈回到下一轮选题、生成与分发。/);
   assert.match(lab, /积累的不是更多图片，而是一套关于「什么能吸引注意力」的判断。/);
@@ -194,9 +195,9 @@ test('首页后半段四组命题使用克制的展示字号', async () => {
 
 test('首页用紧凑闭环解释内容工厂且不展示个人履历信息', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
-  assert.match(html, /审美形成壁垒，品牌积累价值，系统复制规模。/);
-  assert.equal((html.match(/data-system-step/g) ?? []).length, 5);
-  for (const label of ['内容发现', 'Agent 生产', '商品化交付', '分发运营', '数据反馈']) {
+  assert.doesNotMatch(html, /审美形成壁垒，品牌积累价值，系统复制规模。/);
+  assert.equal((html.match(/data-system-step/g) ?? []).length, 4);
+  for (const label of ['内容创作平台', '商品化交付', '分发运营', '数据反馈']) {
     assert.match(html, new RegExp(label));
   }
   assert.doesNotMatch(html, /class=["']role-strip["']/);
@@ -294,7 +295,7 @@ test('工厂页三个章节使用同屏面板而不是锚点滚动', async () =>
 test('工厂三幕主标题使用克制字号并高亮叙事关键词', async () => {
   const html = await readFile(new URL('factory.html', root), 'utf8');
   const css = await readFile(new URL('assets/production.css', root), 'utf8');
-  for (const copy of ['动态资产', '商品', '持续关系']) {
+  for (const copy of ['创作流程', '商品', '持续关系']) {
     assert.match(html, new RegExp(`<span class="title-accent">${copy}</span>`));
   }
   assert.match(css, /\.chapter-head h2\s*\{[^}]*font-size:\s*clamp\(48px,\s*5vw,\s*82px\)/s);
@@ -356,11 +357,11 @@ test('打码模块改为 HotYume 风格双 Agent 流程图且暂不展示案例'
 test('LIVP 模块使用逆向工程实验台而不是截图占位', async () => {
   const html = await readFile(new URL('factory.html', root), 'utf8');
   const css = await readFile(new URL('assets/livp-lab.css', root), 'utf8').catch(() => '');
-  for (const copy of ['48 NAMED EXPERIMENTS', 'ZIP_STORED', '56-BYTE COMMENT', 'CONTENT IDENTIFIER', '17-DIGIT NAME', 'iOS 相册', 'LIVE']) {
+  for (const copy of ['80\\+ EXPERIMENT ROUNDS', 'ZIP_STORED', '56-BYTE COMMENT', 'CONTENT IDENTIFIER', '17-DIGIT NAME', 'iOS 相册', 'LIVE']) {
     assert.match(html, new RegExp(copy));
   }
-  assert.match(html, /没有现成 Know-how，[\s\S]*48 次实验，[\s\S]*跑通一条交付链路。/);
-  assert.match(html, /48 次可复验实验/);
+  assert.match(html, /没有现成 Know-how，[\s\S]*80\+ 轮实验，[\s\S]*跑通一条交付链路。/);
+  assert.match(html, /80\+ 轮可复验实验/);
   assert.match(html, /class="livp-lab"/);
   assert.match(css, /\.livp-lab\s*\{/);
   assert.doesNotMatch(html, /data-asset-slot="livp-experiment-evidence"|PLACEHOLDER \/ 实验记录/);
@@ -492,11 +493,11 @@ test('首屏核心样式带版本标记以避免演示浏览器沿用旧缓存',
   ];
   for (const html of pages) {
     assert.match(html, /assets\/base\.css\?v=\d+[a-z]?/);
-    assert.match(html, /assets\/production\.css\?v=20260824a/);
+    assert.match(html, /assets\/production\.css\?v=\d+[a-z]?/);
   }
   assert.match(pages[1], /assets\/mask-flow\.css\?v=20260823a/);
   assert.match(pages[1], /assets\/livp-lab\.css\?v=20260823a/);
-  assert.match(pages[1], /assets\/brand-store\.css\?v=20260824c/);
+  assert.match(pages[1], /assets\/brand-store\.css\?v=\d+[a-z]?/);
   assert.match(pages[1], /assets\/recommendation-lab\.css\?v=20260824a/);
 });
 
@@ -523,3 +524,12 @@ test('页面内置图标避免本地演示产生 favicon 404', async () => {
   const html = await readFile(new URL('index.html', root), 'utf8');
   assert.match(html, /rel=["']icon["'][^>]+href=["']data:image\/svg\+xml/);
 });
+
+ test('首页改版包含垂直平台商业模式与明确的展示文案', async () => {
+ const html = await readFile(new URL('index.html', root), 'utf8');
+ assert.doesNotMatch(html, /id="moat"|进入生产系统|查看发布系统|查看运营系统/);
+ for (const text of ['生产系统', '发布系统', '运营系统', '如何创作', '如何成为', '如何持续<br>运营', 'ToB IP 内容合作与广告变现', '电商带货', '订阅制', '按算力付费', '内容创作者与爱好者', '垂类工具']) assert.ok(html.includes(text), text);
+ assert.match(html, /目前专注于 ACG <em>动态壁纸<\/em>垂类。/);
+ assert.match(html, /从内容创作、商品交付、渠道分发、到售后运营，我们正在建立 AI 时代的内容供给方式。/);
+ assert.match(html, /端到端的<br>内容生产<em>流水线<\/em>/);
+ });

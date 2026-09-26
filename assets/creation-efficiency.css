@@ -1,0 +1,59 @@
+.creation-efficiency {
+  margin-top: clamp(110px, 13vw, 190px);
+  padding-block: clamp(48px, 6vw, 88px);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+.creation-efficiency__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 24px 70px;
+}
+.creation-efficiency__head > .kicker { grid-column: 1 / -1; }
+.creation-efficiency__head h3 {
+  margin: 0;
+  font-size: clamp(34px, 3.8vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.creation-efficiency__head em { color: var(--hot-coral); font-style: normal; }
+.creation-efficiency__head p {
+  margin: 0;
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.efficiency-comparisons { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; margin-top: 56px; }
+.efficiency-comparison { min-width: 0; border-top: 1px solid var(--line); padding-top: 26px; }
+.efficiency-comparison h4 { margin: 0 0 32px; font-size: 20px; font-weight: 600; }
+.efficiency-comparison__values { display: grid; grid-template-columns: minmax(0, 1.2fr) 28px minmax(0, 1fr); gap: 14px; align-items: center; }
+.efficiency-comparison__values p { margin: 0 0 20px; color: var(--muted); font-size: 15px; }
+.efficiency-comparison__values strong {
+  font-family: var(--font-utility);
+  font-size: clamp(34px, 3.8vw, 58px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 1.15;
+}
+.efficiency-comparison__values > div > div { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+.efficiency-comparison__values small { display: block; margin-top: 14px; color: var(--muted); font-size: 12px; }
+.efficiency-comparison__values span { font-size: 16px; }
+.efficiency-before strong { color: var(--paper); }
+.efficiency-after strong, .efficiency-after span, .efficiency-arrow { color: var(--hot-coral); }
+.efficiency-arrow { text-align: center; }
+@media (max-width: 1180px) {
+  .creation-efficiency__head { grid-template-columns: 1fr; gap: 24px; }
+  .efficiency-comparisons { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 760px) {
+  .creation-efficiency__head h3 { font-size: clamp(28px, 8vw, 38px); }
+  .creation-efficiency__head p { font-size: 16px; }
+  .efficiency-comparison__values { gap: 8px; grid-template-columns: minmax(0, 1.2fr) 20px minmax(0, 1fr); }
+  .efficiency-comparison__values p { font-size: 13px; }
+  .efficiency-comparison__values span { font-size: 13px; }
+  .efficiency-comparison__values > div > div { gap: 4px; }
+  .efficiency-comparison__values strong { font-size: clamp(30px, 8.5vw, 38px); }
+}
